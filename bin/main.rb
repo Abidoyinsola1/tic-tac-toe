@@ -1,9 +1,10 @@
+#!/usr/bin/env ruby
 
-board = [['1', '|', '2', '|', '3'], 
-         ['+', '-', '+', '-', '+'], 
-         ['4', '|', '5', '|', '6'], 
-         ['+', '-', '+', '-', '+'],
-         ['7', '|', '8', '|', '9']];
+board = [[' 1 ', ' | ', ' 2 ', ' | ', ' 3 '], 
+         [' + ', ' - ', ' + ', ' - ', ' + '], 
+         [' 4 ', ' | ', ' 5 ', ' | ', ' 6 '], 
+         [' + ', ' - ', ' + ', ' - ', ' +'],
+         [' 7 ', ' | ', ' 8 ', ' | ', ' 9 ']];
 def dis_board(board) 
   board.each do |arr|
     arr.length.times { |i| print arr[i] }
@@ -37,20 +38,25 @@ def set_position(board, pos)
   end
 end
 
-def start_game
+def start_game(board)
 puts "Welcome to our tic-tac-toe game"
 puts "Enter your name: "
 player1 = gets.chomp
 puts "Enter your name: "
 player2 = gets.chomp
-puts "#{player1} pick a number from 1-9"
-move1 = gets.chomp
-puts "#{player2} pick a number from 1-9"
-move2 = gets.chomp
 end
-dis_board(board);
-puts "Enter you position: "
-pos = gets.chomp.to_i
-set_position(board, pos);
-dis_board(board);
 
+start_game(board)
+
+def pick_pos(board, player)
+puts "#{player1}, enter your position: "
+pos = gets.chomp.to_i
+set_position(board, pos)
+puts "#{player2}, enter your position: "
+pos = gets.chomp.to_i
+set_position(board, pos)
+end
+
+
+
+dis_board(board)
