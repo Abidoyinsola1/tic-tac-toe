@@ -44,19 +44,24 @@ puts "Enter your name: "
 player1 = gets.chomp
 puts "Enter your name: "
 player2 = gets.chomp
+# ra = rand(2) + 1
+# rand_player = ra == 1 ? player1 : player2 
+# puts "${rand_player}, enter your symbol: "
+
+# sym = gets.chomp
+
+3.times do || 
+    puts "#{player1}, enter your position: "
+    pos = gets.chomp.to_i
+    set_position(board, pos);
+    dis_board(board)
+    puts "#{player2}, enter your position: "
+    pos = gets.chomp.to_i
+    set_position(board, pos);
+    dis_board(board)
+end
+
 end
 
 start_game(board)
 
-def pick_pos(board, player)
-puts "#{player1}, enter your position: "
-pos = gets.chomp.to_i
-set_position(board, pos)
-puts "#{player2}, enter your position: "
-pos = gets.chomp.to_i
-set_position(board, pos)
-end
-
-
-
-dis_board(board)
