@@ -1,67 +1,27 @@
 #!/usr/bin/env ruby
+require_relative '../lib/game_board'
+require_relative '../lib/player'
 
-board = [[' 1 ', ' | ', ' 2 ', ' | ', ' 3 '], 
-         [' + ', ' - ', ' + ', ' - ', ' + '], 
-         [' 4 ', ' | ', ' 5 ', ' | ', ' 6 '], 
-         [' + ', ' - ', ' + ', ' - ', ' +'],
-         [' 7 ', ' | ', ' 8 ', ' | ', ' 9 ']];
-def dis_board(board) 
-  board.each do |arr|
-    arr.length.times { |i| print arr[i] }
-    puts
-  end
-end
-
-def set_position(board, pos)
-  symbol = "X";
-  case pos
-  when 1
-    board[0][0] = symbol
-  when 2
-    board[0][2] = symbol
-  when 3
-    board[0][4] = symbol
-  when 4
-    board[2][0] = symbol
-  when 5
-    board[2][2] = symbol
-  when 6
-    board[2][4] = symbol
-  when 7
-    board[4][0] = symbol
- when 8
-    board[4][2] = symbol
- when 9
-    board[4][4] = symbol
- else
-    puts "Invalid postion"
- end
-end
-
-def start_game(board)
+def start_game
 puts "Welcome to our tic-tac-toe game"
-puts "Enter your name: "
-player1 = gets.chomp
-puts "Enter your name: "
-player2 = gets.chomp
-# ra = rand(2) + 1
-# rand_player = ra == 1 ? player1 : player2 
-# puts "${rand_player}, enter your symbol: "
 
-# sym = gets.chomp
+puts "Enter your name: "
+first_player_name = gets.chomp
+first_player_sym = "X"
 
-3.times do || 
-    puts "#{player1}, enter your position: "
-    pos = gets.chomp.to_i
-    set_position(board, pos);
-    dis_board(board)
-    puts "#{player2}, enter your position: "
-    pos = gets.chomp.to_i
-    set_position(board, pos);
-    dis_board(board)
+player1 = Player.new(first_player_name, first_player_sym)
+
+puts "Enter your name: "
+second_player_name = gets.chomp
+second_player_sym = "O"
+
+player2 = Player.new(second_player_name, second_player_sym)
+
+game_board = GameBoard.new(player1, player2)
+
+game_board.display_board
 end
 
-end
 
-start_game(board)
 
+start_game
