@@ -33,7 +33,7 @@ def start_game
       end
       game_board.update_board(pos, player1)
       game_board.display_board
-      if game_board.check_winner?(player2)
+      if game_board.check_winner?(player1)
         puts "#{player1.player_name}, Congratulation! You won!"
         break
       end
