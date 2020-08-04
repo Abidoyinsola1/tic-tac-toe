@@ -33,9 +33,9 @@ def set_position(board, pos)
     board[4][2] = symbol
  when 9
     board[4][4] = symbol
-  else
+ else
     puts "Invalid postion"
-  end
+ end
 end
 
 def start_game(board)
