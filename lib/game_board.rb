@@ -29,10 +29,12 @@ class GameBoard
     def update_board(pos, player)
         if player.symbol === 'X'
             sym = "X"
-            else
+            player.add_pos(pos)
+        else
             sym = "O"
-            end
-            case pos
+            player.add_pos(pos)
+        end
+        case pos
             when 1
               board[0][0] = sym
             when 2
@@ -53,7 +55,18 @@ class GameBoard
               board[4][4] = sym
            else
               puts "Invalid position"
-           end
+        end
     end
-   
+
+
+  def check_pos?(pos)
+    return player1.position.include?(pos) || player2.position.include?(pos) ? true : false
+  end
+
+  def check_winner?(player)
+     @win_pos.each do |arr|
+       return true if (player.position <=> arr) == 0
+     end
+     return false
+  end
 end

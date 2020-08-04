@@ -20,8 +20,37 @@ player2 = Player.new(second_player_name, second_player_sym)
 game_board = GameBoard.new(player1, player2)
 
 game_board.display_board
+pos = 0
+9.times do |i| 
+  if i % 2 == 0
+    puts "#{player1.player_name}, pick your position: "
+    pos = gets.chomp.to_i
+    while game_board.check_pos?(pos)
+        puts "#{player1.player_name}, pick another number: "
+        pos = gets.chomp.to_i
+    end
+    game_board.update_board(pos, player1)
+    game_board.display_board
+    if game_board.check_winner?(player2)
+        puts "#{player1.player_name} Congratualtion! You won!"
+        break;
+    end
+  else
+    puts "#{player2.player_name}, pick your position: "
+    pos = gets.chomp.to_i
+    while game_board.check_pos?(pos)
+     puts "#{player2.player_name}, pick another number: "
+     pos = gets.chomp.to_i
+    end
+    game_board.update_board(pos, player2)
+    game_board.display_board
+    if game_board.check_winner?(player2)
+        puts "#{player2.player_name} Congratualtion! You won!"
+        break;
+    end
+  end
+ end
 end
-
 
 
 start_game
