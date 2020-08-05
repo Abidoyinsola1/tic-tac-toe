@@ -1,5 +1,5 @@
 class GameBoard
-  attr_accessor :board, :player1, :player2, :winner
+  attr_accessor :board, :player1, :player2
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
@@ -11,7 +11,7 @@ class GameBoard
     @win_pos = [[1, 2, 3],
                 [4, 5, 6],
                 [7, 8, 9],
-                [1, 4, 5],
+                [1, 4, 7],
                 [2, 5, 8],
                 [3, 6, 9],
                 [1, 5, 9],
@@ -59,7 +59,7 @@ class GameBoard
   def check_winner?(player)
     winner = false
     @win_pos.each do |arr|
-      winner = true if (player.position <=> arr).zero?
+      winner = true if (arr - player.position).empty?
     end
     winner
   end
