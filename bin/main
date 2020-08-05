@@ -50,10 +50,10 @@ class StartGame
         game_board.display_board
         if game_board.check_winner?(player2)
           puts "#{player2.player_name}, Congratulations! You won!"
-        break
+          break
         end
       end
-      puts 'Oops, it\'s a tie!' if (i >= 8 && !game_board.check_winner?(player1) && !game_board.check_winner?(player2))
+      puts 'Oops, it\'s a tie!' if i >= 8 && !game_board.check_winner?(player1) && !game_board.check_winner?(player2)
     end
   end
 end
