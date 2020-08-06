@@ -35,7 +35,7 @@ class StartGame
         game_board.update_board(pos, player1)
         game_board.display_board
         if game_board.check_winner?(player1)
-          puts "#{player1.player_name}, Congratulation! You won!"
+          puts "#{player1.player_name}, Congratulations! You won!"
           break
         end
       else
@@ -53,7 +53,7 @@ class StartGame
           break
         end
       end
-      puts 'Oops, it\'s a tie!' if i >= 8 && !game_board.check_winner?(player1) && !game_board.check_winner?(player2)
+      puts 'Oops, nobody won!' if i >= 8 && !game_board.check_winner?(player1) && !game_board.check_winner?(player2)
     end
   end
 end
