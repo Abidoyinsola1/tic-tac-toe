@@ -2,7 +2,6 @@ require 'game_board'
 require 'player'
 
 describe GameBoard do
-
   describe '#update_board' do
     it 'changes a character in one of the strings in the @board array from an integer to a symbol' do
       player1 = Player.new('Joe', 'O')
@@ -34,7 +33,7 @@ describe GameBoard do
   end
 
   describe '#check_winner?' do
-    it "returns false if the player does not meet the winning conditions" do
+    it 'returns false if the player does not meet the winning conditions' do
       player1 = Player.new('Joe', 'O')
       player2 = Player.new('Abiola', 'X')
       game_board = GameBoard.new(player1, player2)
@@ -44,7 +43,7 @@ describe GameBoard do
       expect(game_board.check_winner?(player2)).to eql(false)
     end
 
-    it "does not return false if the player meets the winning conditions" do
+    it 'does not return false if the player meets the winning conditions' do
       player1 = Player.new('Joe', 'O')
       player2 = Player.new('Abiola', 'X')
       game_board = GameBoard.new(player1, player2)
