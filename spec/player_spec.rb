@@ -1,7 +1,6 @@
 require_relative '../lib/player.rb'
 
 describe Player do
-
   let (:player) { Player.new('Joe', 'X') }
 
   describe '#add_pos' do
