@@ -2,9 +2,9 @@ require_relative '../lib/game_board.rb'
 require_relative '../lib/player.rb'
 
 describe GameBoard do
-  let (:player1) { Player.new('Joe', 'O') }
-  let (:player2) { Player.new('Abiola', 'X') }
-  let (:game_board) { GameBoard.new(player1, player2) }
+  let(:player1) { Player.new('Joe', 'O') }
+  let(:player2) { Player.new('Abiola', 'X') }
+  let(:game_board) { GameBoard.new(player1, player2) }
 
   describe '#update_board' do
     it 'changes a character in one of the strings in the @board array from an integer to a symbol' do
