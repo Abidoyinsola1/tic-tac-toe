@@ -14,7 +14,7 @@ describe Player do
     it 'does not leave the @position instance variable as an empty array' do
       player = Player.new('Joe', 'X')
       player.add_pos(3)
-      expect(player.position.empty?).not_to eql(true)
+      expect(player.position).not_to be_empty
     end
   end
 end
