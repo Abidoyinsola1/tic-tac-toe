@@ -1,5 +1,5 @@
-require 'game_board'
-require 'player'
+require_relative '../lib/game_board.rb'
+require_relative '../lib/player.rb'
 
 describe GameBoard do
   describe '#update_board' do

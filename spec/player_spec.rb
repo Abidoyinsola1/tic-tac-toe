@@ -1,4 +1,4 @@
-require 'player'
+require_relative '../lib/player.rb'
 
 describe Player do
   describe '#add_pos' do
