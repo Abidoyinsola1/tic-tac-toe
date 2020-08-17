@@ -1,6 +1,9 @@
 require_relative '../lib/player.rb'
 
 describe Player do
+
+  let (:player) { Player.new('Joe', 'X') }
+
   describe '#add_pos' do
     it "pushes a position to the player's @position instance variable" do
       player = Player.new('Joe', 'X')
